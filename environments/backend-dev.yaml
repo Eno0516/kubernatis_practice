@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/<your-username>/<backend-image>
+  tag: "dev"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+  nodePort: 30081
+
+env:
+  LOG_LEVEL: "debug"
+  DATABASE_URL: "postgres://user:password@database:5432/mydb"
+  FEATURE_FLAG_X: "true"

@@ -1,0 +1,22 @@
+repositories:
+  - name: local-charts
+    url: file://./charts
+
+releases:
+  - name: frontend
+    namespace: default
+    chart: ./frontend
+    values:
+      - ./environments/frontend-dev.yaml
+
+  - name: backend
+    namespace: default
+    chart: ./backend
+    values:
+      - ./environments/backend-dev.yaml
+
+  - name: database
+    namespace: default
+    chart: ./database
+    values:
+      - ./environments/database-dev.yaml
